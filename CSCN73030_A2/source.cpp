@@ -7,7 +7,7 @@
 // Custom structure storing student data (first and last name)
 struct STUDENT_DATA {
 	std::string firstName;
-	std::string lastName;
+	std::string lastName; 
 
 	void displayStudentInfo() {
 		std::cout << "First Name: " << firstName << ", Last Name: " << lastName << std::endl;
