@@ -8,6 +8,10 @@
 struct STUDENT_DATA {
 	std::string firstName;
 	std::string lastName;
+
+	void displayStudentInfo() {
+		std::cout << "First Name: " << firstName << ", Last Name: " << lastName << std::endl;
+	}
 };
 
 int main(void) {
@@ -28,11 +32,15 @@ int main(void) {
 	while (std::getline(filein, line)) {					// Read in each line of the file until EOF is found
 		std::istringstream iss(line);						// Create an input string stream that will store each line as an object
 		STUDENT_DATA temp_student;							// Create a temporary student object to store the data	
-		iss >> temp_student.firstName >> temp_student.lastName;		// Read in the first and last name from the line
+		iss >> temp_student.lastName >> temp_student.firstName;		// Read in the first and last name from the line
 		studentData.push_back(temp_student);				// Add the student to the vector
-	}
+	}	
 
 	filein.close();											// Close the file
+
+	#ifdef _DEBUG
+	for (int i = 0; i < studentData.size(); i++) { studentData[i].displayStudentInfo(); } // Display student data when in DEBUG mode
+	#endif	
 
 	return 1;
 }
