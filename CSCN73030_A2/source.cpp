@@ -12,8 +12,13 @@ struct STUDENT_DATA {
 	std::string firstName;
 	std::string email;
 	
-	void displayStudentInfo() {	// This was not updated to display email as the requirements did not ask for it
-		std::cout << "First Name: " << firstName << ", Last Name: " << lastName << std::endl;
+	void displayStudentInfo() {
+		std::cout << "First Name: " << firstName;
+		std::cout << ", Last Name: " << lastName;
+	#ifdef PRE_RELEASE
+		std::cout << ", Email: " << email;
+	#endif
+		std::cout << std::endl;
 	}
 };
 
