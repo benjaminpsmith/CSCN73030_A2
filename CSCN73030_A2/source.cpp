@@ -4,7 +4,7 @@
 #include <iostream>
 #include <sstream>
 
-#define PRE_RELEASE
+//#define PRE_RELEASE
 
 // Custom structure storing student data (first and last name)
 struct STUDENT_DATA {
@@ -36,7 +36,7 @@ int main(void) {
 #ifdef PRE_RELEASE
 	const std::string studentDataFile = "studentData_Emails.txt";	// File to read the student data in from
 #else
-	const std::string studentDataFile = "studentData.txt"
+	const std::string studentDataFile = "studentData.txt";
 #endif
 
 
